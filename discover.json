@@ -1,0 +1,1062 @@
+{
+    "id": "api.form.read",
+    "params": {
+        "resmsgid": "18b5f081-e4ff-466f-a143-44a2072cf51d",
+        "msgid": "a9b376c4-c7a4-44e1-93b8-2e1749f29684",
+        "status": "successful"
+    },
+    "responseCode": "OK",
+    "result": {
+        "form": {
+            "type": "config",
+            "subtype": "discover",
+            "action": "get",
+            "component": "app",
+            "framework": "*",
+            "data": {
+                "templateName": "discover",
+                "action": "get",
+                "fields": [
+                    {
+                        "dataSrc": {
+                            "type": "CONTENT_FACETS",
+                            "request": {
+                                "type": "POST",
+                                "path": "/api/content/v1/search",
+                                "withBearerToken": true,
+                                "body": {
+                                    "request": {
+                                        "limit": 0,
+                                        "offset": 0,
+                                        "mode": "hard",
+                                        "facets": [],
+                                        "filters": {}
+                                    }
+                                }
+                            },
+                            "params": {
+                                "config": [
+                                    {
+                                        "type": "filter",
+                                        "values": [
+                                            {
+                                                "code": "se_gradeLevels",
+                                                "translations": "{\"en\":\"Class\",\"hi\":\"कक्षा\",\"te\":\"క్లాసు\",\"ta\":\"வகுப்பு\",\"mr\":\"इयत्ता\"}",
+                                                "values": [],
+                                                "name": "Class",
+                                                "index": 2
+                                            },
+                                            {
+                                                "code": "se_mediums",
+                                                "translations": "{\"en\":\"Medium\",\"hi\":\"माध्यम\",\"te\":\"మాధ్యమం\",\"ta\":\"மொழி\",\"mr\":\"माध्यम\"}",
+                                                "values": [],
+                                                "name": "Medium",
+                                                "index": 4
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            "values": [
+                                {
+                                    "facet": "Digital Textbook",
+                                    "index": 0,
+                                    "searchCriteria": {
+                                        "facets": [],
+                                        "primaryCategories": [
+                                            "Digital Textbook"
+                                        ],
+                                        "mode": "soft",
+                                        "searchType": "search"
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "facet": "Courses",
+                                    "index": 1,
+                                    "searchCriteria": {
+                                        "facets": [],
+                                        "primaryCategories": [
+                                            "Course"
+                                        ],
+                                        "mode": "soft",
+                                        "searchType": "search"
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "facet": "Tv Classes",
+                                    "index": 2,
+                                    "searchCriteria": {
+                                        "facets": [],
+                                        "primaryCategories": [
+                                            "Explanation Content"
+                                        ],
+                                        "mode": "soft",
+                                        "searchType": "search"
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "facet": "Videos",
+                                    "index": 3,
+                                    "searchCriteria": {
+                                        "facets": [],
+                                        "mimeType": [
+                                            "video/avi",
+                                            "video/mpeg",
+                                            "video/quicktime",
+                                            "video/3gpp",
+                                            "video/mpeg",
+                                            "video/mp4",
+                                            "video/ogg",
+                                            "video/webm"
+                                        ],
+                                        "mode": "soft",
+                                        "searchType": "search"
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "facet": "Interactive Content",
+                                    "index": 5,
+                                    "searchCriteria": {
+                                        "facets": [],
+                                        "mimeType": [
+                                            "application/vnd.ekstep.ecml-archive",
+                                            "application/vnd.ekstep.h5p-archive",
+                                            "application/vnd.ekstep.html-archive"
+                                        ],
+                                        "mode": "soft",
+                                        "searchType": "search"
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "facet": "Audio",
+                                    "index": 4,
+                                    "searchCriteria": {
+                                        "facets": [],
+                                        "mimeType": [
+                                            "audio/mp3",
+                                            "audio/mp4",
+                                            "audio/mpeg",
+                                            "audio/ogg",
+                                            "audio/webm",
+                                            "audio/x-wav",
+                                            "audio/wav"
+                                        ],
+                                        "mode": "soft",
+                                        "searchType": "search"
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                }
+                            ],
+                            "mapping": []
+                        },
+                        "sections": [
+                            {
+                                "index": 0,
+                                "code": "popular_categories",
+                                "description": "{\"en\":\"Explore a wide variety of %category on %appName across different boards and subject\"}",
+                                "title": "{\"en\":\"Popular categories\"}",
+                                "theme": {
+                                    "component": "sb-pills-grid",
+                                    "inputs": {
+                                        "pillShape": "default",
+                                        "pillBorder": "round",
+                                        "pillTextElipsis": "one_line"
+                                    },
+                                    "children": {
+                                        "sb-pill-item": {
+                                            "inputs": {
+                                                "icon": "assets/imgs/all_content.svg",
+                                                "theme": {
+                                                    "iconBgColor": "#FFFFFF",
+                                                    "pillBgColor": "#FFFFFF"
+                                                }
+                                            },
+                                            "inputsMap": {
+                                                "icon": {
+                                                    "digitaltextbooks": "assets/imgs/textbook.svg",
+                                                    "digitaltextbook": "assets/imgs/textbook.svg",
+                                                    "courses": "assets/imgs/course.svg",
+                                                    "course": "assets/imgs/course.svg",
+                                                    "tvprograms": "assets/imgs/tv.svg",
+                                                    "tvclasses": "assets/imgs/tv.svg",
+                                                    "documents": "assets/imgs/documents.svg",
+                                                    "videos": "assets/imgs/videos.svg",
+                                                    "interactivecontent": "assets/imgs/touch.svg",
+                                                    "audio": "assets/imgs/audio.svg"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "dataSrc": {
+                            "type": "CONTENT_FACETS",
+                            "request": {
+                                "type": "POST",
+                                "path": "/api/content/v1/search",
+                                "withBearerToken": true,
+                                "body": {
+                                    "request": {
+                                        "limit": 0,
+                                        "offset": 0,
+                                        "mode": "hard",
+                                        "facets": [],
+                                        "filters": {}
+                                    }
+                                }
+                            },
+                            "params": {
+                                "config": [
+                                    {
+                                        "type": "filter",
+                                        "values": [
+                                            {
+                                                "code": "se_gradeLevels",
+                                                "translations": "{\"en\":\"Class\",\"hi\":\"कक्षा\",\"te\":\"క్లాసు\",\"ta\":\"வகுப்பு\",\"mr\":\"इयत्ता\"}",
+                                                "values": [],
+                                                "name": "Class",
+                                                "index": 2
+                                            },
+                                            {
+                                                "code": "se_mediums",
+                                                "translations": "{\"en\":\"Medium\",\"hi\":\"माध्यम\",\"te\":\"మాధ్యమం\",\"ta\":\"மொழி\",\"mr\":\"माध्यम\"}",
+                                                "values": [],
+                                                "name": "Medium",
+                                                "index": 4
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            "values": [
+                                {
+                                    "code": "ekstep_ncert_k-12",
+                                    "index": 0,
+                                    "facet": "{\"en\":\"CBSE/NCERT\"}",
+                                    "searchCriteria": {
+                                        "facets": [
+                                            "board"
+                                        ],
+                                        "board": [
+                                            "CBSE"
+                                        ]
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "code": "igot_health",
+                                    "index": 1,
+                                    "facet": "{\"en\":\"IGOT-Health\"}",
+                                    "searchCriteria": {
+                                        "facets": [
+                                            "board"
+                                        ],
+                                        "board": [
+                                            "IGOT-Health"
+                                        ]
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "code": "ar_k-12",
+                                    "index": 2,
+                                    "facet": "{\"en\":\"State (Arunachal Pradesh)\"}",
+                                    "searchCriteria": {
+                                        "facets": [
+                                            "board"
+                                        ],
+                                        "board": [
+                                            "State (Arunachal Pradesh)"
+                                        ]
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "code": "ap_k-12",
+                                    "index": 3,
+                                    "facet": "{\"en\":\"State (Andhra Pradesh)\"}",
+                                    "searchCriteria": {
+                                        "facets": [
+                                            "board"
+                                        ],
+                                        "board": [
+                                            "State (Andhra Pradesh)"
+                                        ]
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "code": "as_k-12",
+                                    "index": 4,
+                                    "facet": "{\"en\":\"State (Assam)\"}",
+                                    "searchCriteria": {
+                                        "facets": [
+                                            "board"
+                                        ],
+                                        "board": [
+                                            "State (Assam)"
+                                        ]
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "code": "br_k-12",
+                                    "index": 5,
+                                    "facet": "{\"en\":\"State (Bihar)\"}",
+                                    "searchCriteria": {
+                                        "facets": [
+                                            "board"
+                                        ],
+                                        "board": [
+                                            "State (Bihar)"
+                                        ]
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "code": "ch_k-12",
+                                    "index": 6,
+                                    "facet": "{\"en\":\"State (Chandigarh)\"}",
+                                    "searchCriteria": {
+                                        "facets": [
+                                            "board"
+                                        ],
+                                        "board": [
+                                            "State (Chandigarh)"
+                                        ]
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "code": "cg_k-12",
+                                    "index": 7,
+                                    "facet": "{\"en\":\"State (Chhattisgarh)\"}",
+                                    "searchCriteria": {
+                                        "facets": [
+                                            "board"
+                                        ],
+                                        "board": [
+                                            "State (Chhattisgarh)"
+                                        ]
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "code": "dl_k-12",
+                                    "index": 8,
+                                    "facet": "{\"en\":\"State (Delhi)\"}",
+                                    "searchCriteria": {
+                                        "facets": [
+                                            "board"
+                                        ],
+                                        "board": [
+                                            "State (Delhi)"
+                                        ]
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "code": "ga_k-12",
+                                    "index": 9,
+                                    "facet": "{\"en\":\"State (Goa)\"}",
+                                    "searchCriteria": {
+                                        "facets": [
+                                            "board"
+                                        ],
+                                        "board": [
+                                            "State (Goa)"
+                                        ]
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "code": "gj_k-12",
+                                    "index": 10,
+                                    "facet": "{\"en\":\"State (Gujarat)\"}",
+                                    "searchCriteria": {
+                                        "facets": [
+                                            "board"
+                                        ],
+                                        "board": [
+                                            "State (Gujarat)"
+                                        ]
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "code": "hr_k-12",
+                                    "index": 11,
+                                    "facet": "{\"en\":\"State (Haryana)\"}",
+                                    "searchCriteria": {
+                                        "facets": [
+                                            "board"
+                                        ],
+                                        "board": [
+                                            "State (Haryana)"
+                                        ]
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "code": "hp_k-12",
+                                    "index": 12,
+                                    "facet": "{\"en\":\"State (Himachal Pradesh)\"}",
+                                    "searchCriteria": {
+                                        "facets": [
+                                            "board"
+                                        ],
+                                        "board": [
+                                            "State (Himachal Pradesh)"
+                                        ]
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "code": "jk_k-12",
+                                    "index": 13,
+                                    "facet": "{\"en\":\"State (Jammu And Kashmir)\"}",
+                                    "searchCriteria": {
+                                        "facets": [
+                                            "board"
+                                        ],
+                                        "board": [
+                                            "State (Jammu And Kashmir)"
+                                        ]
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "code": "jh_k-12",
+                                    "index": 14,
+                                    "facet": "{\"en\":\"State (Jharkhand)\"}",
+                                    "searchCriteria": {
+                                        "facets": [
+                                            "board"
+                                        ],
+                                        "board": [
+                                            "State (Jharkhand)"
+                                        ]
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "code": "ka_k-12",
+                                    "index": 15,
+                                    "facet": "{\"en\":\"State (Karnataka)\"}",
+                                    "searchCriteria": {
+                                        "facets": [
+                                            "board"
+                                        ],
+                                        "board": [
+                                            "State (Karnataka)"
+                                        ]
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "code": "kl_k-12",
+                                    "index": 16,
+                                    "facet": "{\"en\":\"State (Kerala)\"}",
+                                    "searchCriteria": {
+                                        "facets": [
+                                            "board"
+                                        ],
+                                        "board": [
+                                            "State (Kerala)"
+                                        ]
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "code": "mp_k-12",
+                                    "index": 17,
+                                    "facet": "{\"en\":\"State (Madhya Pradesh)\"}",
+                                    "searchCriteria": {
+                                        "facets": [
+                                            "board"
+                                        ],
+                                        "board": [
+                                            "State (Madhya Pradesh)"
+                                        ]
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "code": "mh_k-12_1",
+                                    "index": 18,
+                                    "facet": "{\"en\":\"State (Maharashtra)\"}",
+                                    "searchCriteria": {
+                                        "facets": [
+                                            "board"
+                                        ],
+                                        "board": [
+                                            "State (Maharashtra)"
+                                        ]
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "code": "mn_k-12",
+                                    "index": 19,
+                                    "facet": "{\"en\":\"State (Manipur)\"}",
+                                    "searchCriteria": {
+                                        "facets": [
+                                            "board"
+                                        ],
+                                        "board": [
+                                            "State (Manipur)"
+                                        ]
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "code": "ml_k-12",
+                                    "index": 20,
+                                    "facet": "{\"en\":\"State (Meghalya)\"}",
+                                    "searchCriteria": {
+                                        "facets": [
+                                            "board"
+                                        ],
+                                        "board": [
+                                            "State (Meghalya)"
+                                        ]
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "code": "mz_k-12",
+                                    "index": 21,
+                                    "facet": "{\"en\":\"State (Mizoram)\"}",
+                                    "searchCriteria": {
+                                        "facets": [
+                                            "board"
+                                        ],
+                                        "board": [
+                                            "State (Mizoram)"
+                                        ]
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "code": "nl_k-12",
+                                    "index": 22,
+                                    "facet": "{\"en\":\"State (Nagaland)\"}",
+                                    "searchCriteria": {
+                                        "facets": [
+                                            "board"
+                                        ],
+                                        "board": [
+                                            "State (Nagaland)"
+                                        ]
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "code": "od_k-12",
+                                    "index": 23,
+                                    "facet": "{\"en\":\"State (Odisha)\"}",
+                                    "searchCriteria": {
+                                        "facets": [
+                                            "board"
+                                        ],
+                                        "board": [
+                                            "State (Odisha)"
+                                        ]
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "code": "pb_k-12",
+                                    "index": 24,
+                                    "facet": "{\"en\":\"State (Punjab)\"}",
+                                    "searchCriteria": {
+                                        "facets": [
+                                            "board"
+                                        ],
+                                        "board": [
+                                            "State (Punjab)"
+                                        ]
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "code": "rj_k-12",
+                                    "index": 25,
+                                    "facet": "{\"en\":\"State (Rajasthan)\"}",
+                                    "searchCriteria": {
+                                        "facets": [
+                                            "board"
+                                        ],
+                                        "board": [
+                                            "State (Rajasthan)"
+                                        ]
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "code": "sk_k-12_1",
+                                    "index": 26,
+                                    "facet": "{\"en\":\"State (Sikkim)\"}",
+                                    "searchCriteria": {
+                                        "facets": [
+                                            "board"
+                                        ],
+                                        "board": [
+                                            "State (Sikkim)"
+                                        ]
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "code": "tn_k-12_5",
+                                    "index": 27,
+                                    "facet": "{\"en\":\"State (Tamil Nadu)\"}",
+                                    "searchCriteria": {
+                                        "facets": [
+                                            "board"
+                                        ],
+                                        "board": [
+                                            "State (Tamil Nadu)"
+                                        ]
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "code": "ts_k-12",
+                                    "index": 28,
+                                    "facet": "{\"en\":\"State (Telangana)\"}",
+                                    "searchCriteria": {
+                                        "facets": [
+                                            "board"
+                                        ],
+                                        "board": [
+                                            "State (Telangana)"
+                                        ]
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "code": "tp_k-12",
+                                    "index": 29,
+                                    "facet": "{\"en\":\"State (Tripura)\"}",
+                                    "searchCriteria": {
+                                        "facets": [
+                                            "board"
+                                        ],
+                                        "board": [
+                                            "State (Tripura)"
+                                        ]
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "code": "up_k-12",
+                                    "index": 30,
+                                    "facet": "{\"en\":\"State (Uttar Pradesh)\"}",
+                                    "searchCriteria": {
+                                        "facets": [
+                                            "board"
+                                        ],
+                                        "board": [
+                                            "State (Uttar Pradesh)"
+                                        ]
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "code": "uk_k-12",
+                                    "index": 31,
+                                    "facet": "{\"en\":\"State (Uttarakhand)\"}",
+                                    "searchCriteria": {
+                                        "facets": [
+                                            "board"
+                                        ],
+                                        "board": [
+                                            "State (Uttarakhand)"
+                                        ]
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "code": "an_k-12",
+                                    "index": 32,
+                                    "facet": "{\"en\":\"UT (Andaman and Nicobar Islands)\"}",
+                                    "searchCriteria": {
+                                        "facets": [
+                                            "board"
+                                        ],
+                                        "board": [
+                                            "UT (Andaman and Nicobar Islands)"
+                                        ]
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "code": "dd_k-12",
+                                    "index": 33,
+                                    "facet": "{\"en\":\"UT (DNH and DD)\"}",
+                                    "searchCriteria": {
+                                        "facets": [
+                                            "board"
+                                        ],
+                                        "board": [
+                                            "UT (DNH and DD)"
+                                        ]
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "code": "ld_k-12",
+                                    "index": 34,
+                                    "facet": "{\"en\":\"UT (Ladakh)\"}",
+                                    "searchCriteria": {
+                                        "facets": [
+                                            "board"
+                                        ],
+                                        "board": [
+                                            "UT (Ladakh)"
+                                        ]
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "code": "py_k-12",
+                                    "index": 35,
+                                    "facet": "{\"en\":\"UT (Puducherry)\"}",
+                                    "searchCriteria": {
+                                        "facets": [
+                                            "board"
+                                        ],
+                                        "board": [
+                                            "UT (Puducherry)"
+                                        ]
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                }
+                            ],
+                            "mapping": []
+                        },
+                        "sections": [
+                            {
+                                "index": 1,
+                                "code": "other_boards",
+                                "title": "{\"en\":\"Explore content from other boards\"}",
+                                "description": "{\"en\":\"Explore content linked to %category across all subjects\"}",
+                                "isEnabled": true,
+                                "component": "tag",
+                                "shape": "circle",
+                                "theme": {
+                                    "component": "sb-pills-grid",
+                                    "inputs": {
+                                        "pillShape": "default",
+                                        "pillsViewType": "scroll",
+                                        "pillBorder": "round",
+                                        "pillSize": "large",
+                                        "pillTextElipsis": "one_line"
+                                    },
+                                    "children": {
+                                        "sb-pill-item": {
+                                            "inputs": {
+                                                "icon": "assets/imgs/default_circle.png",
+                                                "theme": {
+                                                    "iconBgColor": "#FFFFFF",
+                                                    "pillBgColor": "#FFFFFF"
+                                                }
+                                            },
+                                            "inputsMap": {
+                                                "icon": {
+                                                    "ekstep_ncert_k-12": "https://diksha.gov.in/cbse/cbse-logo.png",
+                                                    "igot_health": "https://diksha.gov.in/igot/logo.png",
+                                                    "ar_k-12": "https://diksha.gov.in/ar/logo.png",
+                                                    "ap_k-12": "https://diksha.gov.in/ap/logo.png",
+                                                    "as_k-12": "https://diksha.gov.in/as/logo.png",
+                                                    "br_k-12": "https://diksha.gov.in/br/logo.png",
+                                                    "ch_k-12": "https://diksha.gov.in/logo.png",
+                                                    "cg_k-12": "https://diksha.gov.in/cg/logo.png",
+                                                    "dl_k-12": "https://diksha.gov.in/dl/logo.png",
+                                                    "ga_k-12": "https://diksha.gov.in/ga/logo.png",
+                                                    "gj_k-12": "https://diksha.gov.in/gj/logo.png",
+                                                    "hr_k-12": "https://diksha.gov.in/hr/logo.png",
+                                                    "hp_k-12": "https://diksha.gov.in/logo.png",
+                                                    "jk_k-12": "https://diksha.gov.in/jk/logo.png",
+                                                    "jh_k-12": "https://diksha.gov.in/jh/logo.png",
+                                                    "ka_k-12": "https://diksha.gov.in/ka/appLogo.png",
+                                                    "kl_k-12": "https://diksha.gov.in/logo.png",
+                                                    "mp_k-12": "https://diksha.gov.in/mp/logo.png",
+                                                    "mh_k-12_1": "https://diksha.gov.in/mh/logo.png",
+                                                    "mn_k-12": "https://diksha.gov.in/mn/appLogo.png",
+                                                    "ml_k-12": "https://diksha.gov.in/ml/logo.png",
+                                                    "mz_k-12": "https://diksha.gov.in/mz/logo.png",
+                                                    "nl_k-12": "https://diksha.gov.in/nl/logo.png",
+                                                    "od_k-12": "https://diksha.gov.in/od/appLogo.png",
+                                                    "pb_k-12": "https://diksha.gov.in/pb/appLogo.png",
+                                                    "rj_k-12": "https://diksha.gov.in/rj/appLogo.png",
+                                                    "sk_k-12_1": "https://diksha.gov.in/sk/logo.png",
+                                                    "tn_k-12_5": "https://diksha.gov.in/tn/appLogo.png",
+                                                    "ts_k-12": "https://diksha.gov.in/ts/logo.png",
+                                                    "tp_k-12": "https://diksha.gov.in/logo.png",
+                                                    "up_k-12": "https://diksha.gov.in/up/appLogo.png",
+                                                    "uk_k-12": "https://diksha.gov.in/logo.png",
+                                                    "an_k-12": "https://diksha.gov.in/an/logo.png",
+                                                    "dd_k-12": "https://diksha.gov.in/dd/appLogo.png",
+                                                    "ld_k-12": "https://diksha.gov.in/ld/appLogo.png",
+                                                    "py_k-12": "https://diksha.gov.in/py/appLogo.png"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "dataSrc": {
+                            "type": "CONTENT_FACETS",
+                            "request": {
+                                "type": "POST",
+                                "path": "/api/content/v1/search",
+                                "withBearerToken": true,
+                                "body": {
+                                    "request": {
+                                        "limit": 0,
+                                        "offset": 0,
+                                        "mode": "hard",
+                                        "facets": [],
+                                        "filters": {}
+                                    }
+                                }
+                            },
+                            "params": {
+                                "config": [
+                                    {
+                                        "type": "filter",
+                                        "values": [
+                                            {
+                                                "code": "se_gradeLevels",
+                                                "translations": "{\"en\":\"Class\",\"hi\":\"कक्षा\",\"te\":\"క్లాసు\",\"ta\":\"வகுப்பு\",\"mr\":\"इयत्ता\"}",
+                                                "values": [],
+                                                "name": "Class",
+                                                "index": 2
+                                            },
+                                            {
+                                                "code": "se_mediums",
+                                                "translations": "{\"en\":\"Medium\",\"hi\":\"माध्यम\",\"te\":\"మాధ్యమం\",\"ta\":\"மொழி\",\"mr\":\"माध्यम\"}",
+                                                "values": [],
+                                                "name": "Medium",
+                                                "index": 4
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            "values": [
+                                {
+                                    "code": "teacher",
+                                    "facet": "Teacher",
+                                    "index": 0,
+                                    "searchCriteria": {
+                                        "facets": [],
+                                        "audience": [
+                                            "Teacher"
+                                        ],
+                                        "mode": "soft",
+                                        "searchType": "search"
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "code": "student",
+                                    "facet": "Student",
+                                    "index": 1,
+                                    "searchCriteria": {
+                                        "facets": [],
+                                        "audience": [
+                                            "Student"
+                                        ],
+                                        "mode": "soft",
+                                        "searchType": "search"
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "code": "parent",
+                                    "facet": "Parent/Guardian",
+                                    "index": 2,
+                                    "searchCriteria": {
+                                        "facets": [],
+                                        "audience": [
+                                            "Parent"
+                                        ],
+                                        "mode": "soft",
+                                        "searchType": "search"
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                },
+                                {
+                                    "code": "administrator",
+                                    "facet": "Head Teacher & Officials",
+                                    "index": 3,
+                                    "searchCriteria": {
+                                        "facets": [],
+                                        "audience": [
+                                            "Administrator"
+                                        ],
+                                        "mode": "soft",
+                                        "searchType": "search"
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    }
+                                }
+                            ],
+                            "mapping": []
+                        },
+                        "sections": [
+                            {
+                                "index": 2,
+                                "code": "browse_by_audience",
+                                "title": "{\"en\":\"Explore content for a variety of audience\"}",
+                                "description": "{\"en\":\"Explore a wide variety of content meant for %category on %appName\"}",
+                                "isEnabled": true,
+                                "component": "tag",
+                                "shape": "circle",
+                                "theme": {
+                                    "component": "sb-pills-grid",
+                                    "inputs": {
+                                        "pillShape": "default",
+                                        "pillsViewType": "scroll",
+                                        "pillBorder": "round",
+                                        "pillSize": "large",
+                                        "pillTextElipsis": "one_line"
+                                    },
+                                    "children": {
+                                        "sb-pill-item": {
+                                            "inputs": {
+                                                "icon": "assets/imgs/default_circle.png",
+                                                "theme": {
+                                                    "iconBgColor": "#FFFFFF",
+                                                    "pillBgColor": "#FFFFFF"
+                                                }
+                                            },
+                                            "inputsMap": {
+                                                "icon": {
+                                                    "student": "assets/imgs/ic_student.svg",
+                                                    "teacher": "assets/imgs/ic_teacher.svg",
+                                                    "parent": "assets/imgs/ic_parent.svg",
+                                                    "administrator": "assets/imgs/ic_admin.svg"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "created_on": "2021-02-11T08:50:44.320Z",
+            "last_modified_on": "2021-05-12T18:49:33.615Z",
+            "rootOrgId": "*"
+        }
+    },
+    "ts": "2021-08-11T08:36:09.405Z",
+    "ver": "1.0"
+}

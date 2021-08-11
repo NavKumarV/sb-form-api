@@ -1,0 +1,382 @@
+{
+    "id": "api.form.read",
+    "params": {
+        "resmsgid": "009e6dbc-e6bf-401e-a494-87227f2cc6d8",
+        "msgid": "6ca089be-f09b-4e8f-a3b2-f48b09186a26",
+        "status": "successful"
+    },
+    "responseCode": "OK",
+    "result": {
+        "form": {
+            "type": "config",
+            "subtype": "home_v4",
+            "action": "get",
+            "component": "app",
+            "framework": "*",
+            "data": {
+                "templateName": "home_v4",
+                "action": "get",
+                "fields": [
+                    {
+                        "dataSrc": {
+                            "type": "TRACKABLE_COLLECTIONS",
+                            "request": {
+                                "type": "GET",
+                                "path": "/api/course/v1/user/enrollment/list/${userId}",
+                                "parameters": {
+                                    "orgdetails": "orgName,email",
+                                    "fields": "contentType,topic,name,channel,pkgVersion,primaryCategory,trackable",
+                                    "batchDetails": "name,endDate,startDate,status,enrollmentType,createdBy,certificates"
+                                },
+                                "withBearerToken": true,
+                                "withUserToken": true
+                            },
+                            "mapping": []
+                        },
+                        "sections": [
+                            {
+                                "index": 0,
+                                "title": "{\"en\":\"My learning\"}",
+                                "isEnabled": true,
+                                "theme": {
+                                    "component": "sb-course-cards-hlist",
+                                    "inputs": {
+                                        "type": "my_course_recently_viewed_card_grid",
+                                        "hideProgress": true,
+                                        "viewMoreButtonText": "{\"en\":\"View all\"}",
+                                        "maxCardCount": 10,
+                                        "viewMoreButtonPosition": "right"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "dataSrc": {
+                            "type": "CONTENT_DISCOVERY_BANNER",
+                            "mapping": [],
+                            "values": []
+                        },
+                        "sections": [
+                            {
+                                "index": 1,
+                                "code": "content_discovery_banner",
+                                "isEnabled": false,
+                                "title": "{\"en\":\"Featured\",\"as\":\"বিশেষভাৱে প্ৰস্তুত কৰা হৈছে\",\"bn\":\"বৈশিষ্ট্যযুক্ত\",\"gu\":\"વિશેષ\",\"hi\":\"विशेष रुप से प्रदर्शित\",\"kn\":\"ವಿಶೇಷವಾಗಿರುವುದು\",\"mr\":\"वैशिष्ट्यपूर्ण\",\"or\":\"ବିଶେଷିତ\",\"pa\":\"ਫੀਚਰਡ\",\"ta\":\"சிறப்பு\",\"te\":\"ఫీచర్ చేయబడింది\"}",
+                                "theme": {
+                                    "component": "sb-banner-card-hlist",
+                                    "inputs": {}
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "dataSrc": {
+                            "type": "CONTENT_FACETS",
+                            "request": {
+                                "type": "POST",
+                                "path": "/api/content/v1/search",
+                                "withBearerToken": true,
+                                "body": {
+                                    "request": {
+                                        "limit": 0,
+                                        "offset": 0,
+                                        "mode": "hard",
+                                        "facets": [],
+                                        "filters": {
+                                            "primaryCategory": [
+                                                "Course",
+                                                "Digital Textbook",
+                                                "Explanation Content"
+                                            ]
+                                        }
+                                    }
+                                }
+                            },
+                            "params": {
+                                "config": [
+                                    {
+                                        "name": "primaryCategory",
+                                        "mergeableAttributes": [
+                                            "additionalCategories"
+                                        ],
+                                        "values": [
+                                            {
+                                                "name": "TV Classes",
+                                                "type": "additionalCategories",
+                                                "code": "tvlesson",
+                                                "searchCriteria": {
+                                                    "impliedFilters": [
+                                                        {
+                                                            "name": "primaryCategory",
+                                                            "values": [
+                                                                {
+                                                                    "name": "Explanation Content",
+                                                                    "apply": true
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "name": "additionalCategories",
+                                                            "values": [
+                                                                {
+                                                                    "name": "TV Lesson",
+                                                                    "apply": true
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "name": "Digital Textbook",
+                                                "code": "digitaltextbook",
+                                                "searchCriteria": {
+                                                    "impliedFilters": [
+                                                        {
+                                                            "name": "primaryCategory",
+                                                            "values": [
+                                                                {
+                                                                    "name": "Digital Textbook",
+                                                                    "apply": true
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "name": "Course",
+                                                "code": "course",
+                                                "searchCriteria": {
+                                                    "impliedFilters": [
+                                                        {
+                                                            "name": "primaryCategory",
+                                                            "values": [
+                                                                {
+                                                                    "name": "Course",
+                                                                    "apply": true
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "merge": [
+                                    {
+                                        "source": "primaryCategory",
+                                        "destination": "additionalCategories",
+                                        "request": {
+                                            "type": "POST",
+                                            "path": "/api/content/v1/search",
+                                            "withBearerToken": true,
+                                            "body": {
+                                                "request": {
+                                                    "limit": 0,
+                                                    "offset": 0,
+                                                    "mode": "hard",
+                                                    "facets": [],
+                                                    "filters": {
+                                                        "primaryCategory": [
+                                                            "Explanation Content"
+                                                        ],
+                                                        "additionalCategories": [
+                                                            "TV Lesson"
+                                                        ]
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "mapping": {
+                                            "facet": "additionalCategories",
+                                            "aggregate": {
+                                                "groupBy": "primaryCategory",
+                                                "groupSortBy": [
+                                                    {
+                                                        "name": {
+                                                            "order": "asc"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            "mapping": [
+                                {
+                                    "facet": "primaryCategory",
+                                    "aggregate": {
+                                        "groupBy": "subject",
+                                        "groupSortBy": [
+                                            {
+                                                "name": {
+                                                    "order": "asc",
+                                                    "preference": [
+                                                        "English",
+                                                        "Mathematics",
+                                                        "Science"
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "facet": "subject",
+                                    "aggregate": {
+                                        "groupBy": "primaryCategory",
+                                        "groupSortBy": [
+                                            {
+                                                "name": {
+                                                    "order": "asc",
+                                                    "preference": [
+                                                        "Digital Textbook",
+                                                        "Course"
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "facet": "additionalCategories",
+                                    "aggregate": {
+                                        "groupBy": "primaryCategory",
+                                        "groupSortBy": [
+                                            {
+                                                "name": {
+                                                    "order": "asc"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                        "sections": [
+                            {
+                                "index": 2,
+                                "isEnabled": true,
+                                "code": "browse_by_category",
+                                "title": "{\"en\":\"Browse by category\"}",
+                                "description": "{\"en\":\"Explore %category from all the boards and mediums on %appName\"}",
+                                "theme": {
+                                    "component": "sb-pills-grid",
+                                    "inputs": {
+                                        "pillShape": "image_overlap",
+                                        "pillsViewType": "scroll",
+                                        "pillTextElipsis": "three_line"
+                                    },
+                                    "children": {
+                                        "sb-pill-item": {
+                                            "inputs": {
+                                                "icon": "assets/imgs/all_content.svg",
+                                                "theme": {
+                                                    "iconBgColor": "#FFFFFF",
+                                                    "pillBgColor": "#FFFFFF"
+                                                }
+                                            },
+                                            "inputsMap": {
+                                                "icon": {
+                                                    "digitaltextbooks": "assets/imgs/textbook.svg",
+                                                    "digitaltextbook": "assets/imgs/textbook.svg",
+                                                    "courses": "assets/imgs/course.svg",
+                                                    "course": "assets/imgs/course.svg",
+                                                    "tvprograms": "assets/imgs/tv.svg",
+                                                    "tvclasses": "assets/imgs/tv.svg",
+                                                    "documents": "assets/imgs/documents.svg",
+                                                    "videos": "assets/imgs/videos.svg"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "index": 3,
+                                "isEnabled": true,
+                                "code": "browse_by_subjects",
+                                "title": "{\"en\":\"Browse by subject\"}",
+                                "description": "{\"en\":\"Explore digital textbooks, courses, videos and more  on %category\"}",
+                                "theme": {
+                                    "component": "sb-pills-grid",
+                                    "inputs": {
+                                        "pillShape": "default",
+                                        "pillsViewType": "scroll",
+                                        "minDisplayCount": 10,
+                                        "showMoreViewType": "new_screen",
+                                        "viewMoreText": "{\"en\":\"View all subjects\"}",
+                                        "viewLessText": "{\"en\":\"View Less\"}",
+                                        "pillsMultiRow": "double_view_column",
+                                        "pillSize": "medium",
+                                        "pillBorder": "semi_round",
+                                        "pillTextElipsis": "two_line"
+                                    },
+                                    "children": {
+                                        "sb-pill-item": {
+                                            "inputs": {
+                                                "icon": "assets/imgs/book_default.svg"
+                                            },
+                                            "inputsMap": {
+                                                "icon": {
+                                                    "german": "assets/imgs/book_english.svg",
+                                                    "mathematics": "assets/imgs/calculator.svg",
+                                                    "science": "assets/imgs/globe.svg"
+                                                },
+                                                "theme": {
+                                                    "german": {
+                                                        "iconBgColor": "rgba(255,139,46,1)",
+                                                        "pillBgColor": "rgba(255,139,46,0.3)"
+                                                    },
+                                                    "mathematics": {
+                                                        "iconBgColor": "rgba(163,99,255,1)",
+                                                        "pillBgColor": "rgba(163,99,255,0.3)"
+                                                    },
+                                                    "science": {
+                                                        "iconBgColor": "rgba(34,139,255,1)",
+                                                        "pillBgColor": "rgba(34,139,255,0.3)"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "dataSrc": {
+                            "type": "RECENTLY_VIEWED_CONTENTS",
+                            "mapping": []
+                        },
+                        "sections": [
+                            {
+                                "index": 4,
+                                "isEnabled": true,
+                                "title": "{\"en\":\"Recently viewed\"}",
+                                "theme": {
+                                    "component": "sb-library-cards-hlist",
+                                    "inputs": {
+                                        "type": "mobile_textbook",
+                                        "viewMoreButtonText": "{\"en\":\"View all\"}",
+                                        "maxCardCount": 10,
+                                        "viewMoreButtonPosition": "right"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "created_on": "2021-06-29T18:33:30.741Z",
+            "last_modified_on": "2021-07-03T11:41:06.896Z",
+            "rootOrgId": "*"
+        }
+    },
+    "ts": "2021-08-11T08:35:53.987Z",
+    "ver": "1.0"
+}
