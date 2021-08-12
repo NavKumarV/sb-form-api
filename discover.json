@@ -38,19 +38,20 @@
                                 "config": [
                                     {
                                         "type": "filter",
+                                        "code": "popular_categories",
                                         "values": [
                                             {
-                                                "code": "se_gradeLevels",
-                                                "translations": "{\"en\":\"Class\",\"hi\":\"कक्षा\",\"te\":\"క్లాసు\",\"ta\":\"வகுப்பு\",\"mr\":\"इयत्ता\"}",
+                                                "code": "subject",
+                                                "translations": "{\"en\":\"Subject\",\"hi\":\"कक्षा\",\"te\":\"క్లాసు\",\"ta\":\"வகுப்பு\",\"mr\":\"इयत्ता\"}",
                                                 "values": [],
-                                                "name": "Class",
+                                                "name": "Subject",
                                                 "index": 2
                                             },
                                             {
-                                                "code": "se_mediums",
-                                                "translations": "{\"en\":\"Medium\",\"hi\":\"माध्यम\",\"te\":\"మాధ్యమం\",\"ta\":\"மொழி\",\"mr\":\"माध्यम\"}",
+                                                "code": "audience",
+                                                "translations": "{\"en\":\"Role\",\"hi\":\"माध्यम\",\"te\":\"మాధ్యమం\",\"ta\":\"மொழி\",\"mr\":\"माध्यम\"}",
                                                 "values": [],
-                                                "name": "Medium",
+                                                "name": "Role",
                                                 "index": 4
                                             }
                                         ]
@@ -71,7 +72,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "facet": "Courses",
@@ -86,7 +88,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "facet": "Tv Classes",
@@ -101,7 +104,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "facet": "Videos",
@@ -123,7 +127,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "facet": "Interactive Content",
@@ -140,7 +145,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "facet": "Audio",
@@ -161,7 +167,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 }
                             ],
                             "mapping": []
@@ -229,19 +236,20 @@
                                 "config": [
                                     {
                                         "type": "filter",
+                                        "code": "other_boards",
                                         "values": [
                                             {
-                                                "code": "se_gradeLevels",
-                                                "translations": "{\"en\":\"Class\",\"hi\":\"कक्षा\",\"te\":\"క్లాసు\",\"ta\":\"வகுப்பு\",\"mr\":\"इयत्ता\"}",
+                                                "code": "subject",
+                                                "translations": "{\"en\":\"Subject\",\"hi\":\"कक्षा\",\"te\":\"క్లాసు\",\"ta\":\"வகுப்பு\",\"mr\":\"इयत्ता\"}",
                                                 "values": [],
-                                                "name": "Class",
+                                                "name": "Subject",
                                                 "index": 2
                                             },
                                             {
-                                                "code": "se_mediums",
-                                                "translations": "{\"en\":\"Medium\",\"hi\":\"माध्यम\",\"te\":\"మాధ్యమం\",\"ta\":\"மொழி\",\"mr\":\"माध्यम\"}",
+                                                "code": "audience",
+                                                "translations": "{\"en\":\"Role\",\"hi\":\"माध्यम\",\"te\":\"మాధ్యమం\",\"ta\":\"மொழி\",\"mr\":\"माध्यम\"}",
                                                 "values": [],
-                                                "name": "Medium",
+                                                "name": "Role",
                                                 "index": 4
                                             }
                                         ]
@@ -263,7 +271,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "code": "igot_health",
@@ -279,7 +288,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "code": "ar_k-12",
@@ -295,7 +305,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "code": "ap_k-12",
@@ -311,7 +322,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "code": "as_k-12",
@@ -327,7 +339,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "code": "br_k-12",
@@ -343,7 +356,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "code": "ch_k-12",
@@ -359,7 +373,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "code": "cg_k-12",
@@ -375,7 +390,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "code": "dl_k-12",
@@ -391,7 +407,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "code": "ga_k-12",
@@ -407,7 +424,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "code": "gj_k-12",
@@ -423,7 +441,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "code": "hr_k-12",
@@ -439,7 +458,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "code": "hp_k-12",
@@ -455,7 +475,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "code": "jk_k-12",
@@ -471,7 +492,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "code": "jh_k-12",
@@ -487,7 +509,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "code": "ka_k-12",
@@ -503,7 +526,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "code": "kl_k-12",
@@ -519,7 +543,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "code": "mp_k-12",
@@ -535,7 +560,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "code": "mh_k-12_1",
@@ -551,7 +577,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "code": "mn_k-12",
@@ -567,7 +594,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "code": "ml_k-12",
@@ -583,7 +611,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "code": "mz_k-12",
@@ -599,7 +628,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "code": "nl_k-12",
@@ -615,7 +645,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "code": "od_k-12",
@@ -631,7 +662,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "code": "pb_k-12",
@@ -647,7 +679,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "code": "rj_k-12",
@@ -663,7 +696,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "code": "sk_k-12_1",
@@ -679,7 +713,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "code": "tn_k-12_5",
@@ -695,7 +730,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "code": "ts_k-12",
@@ -711,7 +747,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "code": "tp_k-12",
@@ -727,7 +764,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "code": "up_k-12",
@@ -743,7 +781,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "code": "uk_k-12",
@@ -759,7 +798,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "code": "an_k-12",
@@ -775,7 +815,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "code": "dd_k-12",
@@ -791,7 +832,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "code": "ld_k-12",
@@ -807,7 +849,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "code": "py_k-12",
@@ -823,7 +866,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 }
                             ],
                             "mapping": []
@@ -922,19 +966,20 @@
                                 "config": [
                                     {
                                         "type": "filter",
+                                        "code": "browse_by_audience",
                                         "values": [
                                             {
-                                                "code": "se_gradeLevels",
-                                                "translations": "{\"en\":\"Class\",\"hi\":\"कक्षा\",\"te\":\"క్లాసు\",\"ta\":\"வகுப்பு\",\"mr\":\"इयत्ता\"}",
+                                                "code": "subject",
+                                                "translations": "{\"en\":\"Subject\",\"hi\":\"कक्षा\",\"te\":\"క్లాసు\",\"ta\":\"வகுப்பு\",\"mr\":\"इयत्ता\"}",
                                                 "values": [],
-                                                "name": "Class",
+                                                "name": "Subject",
                                                 "index": 2
                                             },
                                             {
-                                                "code": "se_mediums",
-                                                "translations": "{\"en\":\"Medium\",\"hi\":\"माध्यम\",\"te\":\"మాధ్యమం\",\"ta\":\"மொழி\",\"mr\":\"माध्यम\"}",
+                                                "code": "audience",
+                                                "translations": "{\"en\":\"Role\",\"hi\":\"माध्यम\",\"te\":\"మాధ్యమం\",\"ta\":\"மொழி\",\"mr\":\"माध्यम\"}",
                                                 "values": [],
-                                                "name": "Medium",
+                                                "name": "Role",
                                                 "index": 4
                                             }
                                         ]
@@ -956,7 +1001,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "code": "student",
@@ -972,7 +1018,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "code": "parent",
@@ -988,7 +1035,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "code": "administrator",
@@ -1004,7 +1052,8 @@
                                     },
                                     "aggregate": {
                                         "groupBy": "subject"
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 }
                             ],
                             "mapping": []
