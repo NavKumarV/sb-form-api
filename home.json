@@ -54,8 +54,54 @@
                     {
                         "dataSrc": {
                             "type": "CONTENT_DISCOVERY_BANNER",
+                            "params": {
+                                "config": [
+                                    {
+                                        "type": "filter",
+                                        "code": "content_discovery_banner",
+                                        "values": [
+                                            {
+                                                "code": "subject",
+                                                "translations": "{\"en\":\"Subject\",\"hi\":\"कक्षा\",\"te\":\"క్లాసు\",\"ta\":\"வகுப்பு\",\"mr\":\"इयत्ता\"}",
+                                                "values": [],
+                                                "name": "Subject",
+                                                "index": 2
+                                            },
+                                            {
+                                                "code": "audience",
+                                                "translations": "{\"en\":\"Role\",\"hi\":\"माध्यम\",\"te\":\"మాధ్యమం\",\"ta\":\"மொழி\",\"mr\":\"माध्यम\"}",
+                                                "values": [],
+                                                "name": "Role",
+                                                "index": 4
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
                             "mapping": [],
-                            "values": []
+                            "values": [
+                                {
+                                    "code": "banner_search",
+                                    "ui": {
+                                        "background": "https://cdn.pixabay.com/photo/2015/10/29/14/38/web-1012467_960_720.jpg",
+                                        "text": "Sample Search"
+                                    },
+                                    "facet": "Sample Search",
+                                    "index": 0,
+                                    "searchCriteria": {
+                                        "facets": [],
+                                        "primaryCategories": [
+                                            "Digital Textbook"
+                                        ],
+                                        "mode": "soft",
+                                        "searchType": "search"
+                                    },
+                                    "aggregate": {
+                                        "groupBy": "subject"
+                                    },
+                                    "filterPillBy": "primaryCategory"
+                                }
+                            ]
                         },
                         "sections": [
                             {
@@ -163,6 +209,46 @@
                                                 }
                                             }
                                         ]
+                                    },
+                                    {
+                                        "type": "filter",
+                                        "code": "browse_by_category",
+                                        "values": [
+                                            {
+                                                "code": "subject",
+                                                "translations": "{\"en\":\"Subject\",\"hi\":\"कक्षा\",\"te\":\"క్లాసు\",\"ta\":\"வகுப்பு\",\"mr\":\"इयत्ता\"}",
+                                                "values": [],
+                                                "name": "Subject",
+                                                "index": 2
+                                            },
+                                            {
+                                                "code": "audience",
+                                                "translations": "{\"en\":\"Role\",\"hi\":\"माध्यम\",\"te\":\"మాధ్యమం\",\"ta\":\"மொழி\",\"mr\":\"माध्यम\"}",
+                                                "values": [],
+                                                "name": "Role",
+                                                "index": 4
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "filter",
+                                        "code": "browse_by_subjects",
+                                        "values": [
+                                            {
+                                                "code": "primaryCategory",
+                                                "translations": "{\"en\":\"Category\",\"hi\":\"कक्षा\",\"te\":\"క్లాసు\",\"ta\":\"வகுப்பு\",\"mr\":\"इयत्ता\"}",
+                                                "values": [],
+                                                "name": "Category",
+                                                "index": 2
+                                            },
+                                            {
+                                                "code": "audience",
+                                                "translations": "{\"en\":\"Role\",\"hi\":\"माध्यम\",\"te\":\"మాధ్యమం\",\"ta\":\"மொழி\",\"mr\":\"माध्यम\"}",
+                                                "values": [],
+                                                "name": "Role",
+                                                "index": 4
+                                            }
+                                        ]
                                     }
                                 ],
                                 "merge": [
@@ -223,7 +309,8 @@
                                                 }
                                             }
                                         ]
-                                    }
+                                    },
+                                    "filterPillBy": "primaryCategory"
                                 },
                                 {
                                     "facet": "subject",
@@ -240,7 +327,8 @@
                                                 }
                                             }
                                         ]
-                                    }
+                                    },
+                                    "filterPillBy": "subject"
                                 },
                                 {
                                     "facet": "additionalCategories",
